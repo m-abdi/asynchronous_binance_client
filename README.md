@@ -1,4 +1,4 @@
-# asynchronous_binance_client
+# asynchronous_binance_client(asyncio)
 
 This is an asynchronous library that is written for using binance services.
 
@@ -19,6 +19,25 @@ binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)</code>
 3- Finally await methods:
 
 <pre><code>await binance_client.candlestick_data(session, 'BTCUSDT', interval='4h', limit=300)</code></pre>
+
+
+## Example:
+
+<pre><code>
+import asyncio
+import ujson
+from binance import BinanceFuturesClient
+binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)
+
+
+async def fetch():
+  async with aiohttp.ClientSession(json_serialize=ujson.dumps) as session:
+    result = await asyncio.create_task(binance_client.candlestick_data(session, 'BTCUSDT', interval='4h', limit=300))
+    print(result)
+
+
+asyncio.run(fetch())
+</code></pre>
 
 
 
