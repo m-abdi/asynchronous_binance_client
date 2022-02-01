@@ -1,4 +1,4 @@
-# asynchronous_binance_client(asyncio)
+# asynchronous_binance_client(asyncio and aiohttp)
 
 This is an asynchronous library that is written for using binance services.
 
@@ -25,6 +25,7 @@ binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)</code>
 
 <pre><code>
 import asyncio
+import aiohttp
 import ujson
 from binance import BinanceFuturesClient
 binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)
