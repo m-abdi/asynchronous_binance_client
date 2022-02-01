@@ -7,7 +7,8 @@ You need aiohttp and asyncio for delealing with methods and properties.
 
 1- First instantiate from BinanceFuturesClient:
 
-<pre><code>binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)</code></pre>
+<pre><code>from binance import BinanceFuturesClient
+binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)</code></pre>
 
 
 2 - Then from aiohttp.ClientSession:
@@ -18,3 +19,7 @@ You need aiohttp and asyncio for delealing with methods and properties.
 3- Finally await methods:
 
 <pre><code>await binance_client.candlestick_data(session, 'BTCUSDT', interval='4h', limit=300)</code></pre>
+
+
+
+
