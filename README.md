@@ -7,7 +7,8 @@ You need aiohttp and asyncio for delealing with methods and properties.
 
 1- First instantiate from BinanceFuturesClient:
 
-<pre><code>from binance import BinanceFuturesClient
+<pre><code>from binance_aiohttp.client import BinanceFuturesClient
+
 binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)</code></pre>
 
 
@@ -24,12 +25,13 @@ binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)</code>
 ## Example:
 
 <pre><code>
+
 import asyncio
 import aiohttp
 import ujson
-from binance import BinanceFuturesClient
-binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)
+from binance_aiohttp.client import BinanceFuturesClient
 
+binance_client = BinanceFuturesClient(api_key, secret_key, testnet=False)
 
 async def fetch():
   async with aiohttp.ClientSession(json_serialize=ujson.dumps) as session:
